@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/me', function(Request $request) {
         return auth()->user();
     });
-    Route::post('/auth/logout', [MeditationController::class, 'logout']);
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
 
     Route::post('/meditation', [MeditationController::class, 'store']);
     Route::get('/meditation/insights', [MeditationController::class, 'insights']);
